@@ -13,7 +13,7 @@ pathStatic = path.join(__dirname, 'static')
 app.use(express.static(pathStatic))
 
 app.get('', (req, res) => {
-    res.render('base', { whichPartial: () => 'form' })
+    res.render('base.hbs', { whichPartial: () => 'form' })
 })
 
 
