@@ -18,9 +18,11 @@ title.addEventListener('keyup', async (e) => {
             suggestion.removeChild(suggestion.firstChild)
         }
 
+        console.log(res.items[0])
+
         res.items.forEach((item) => {        
             var optionNode = document.createElement('div')
-            optionNode.innerHTML = item.volumeInfo.title 
+            optionNode.innerHTML = item.volumeInfo.title + ' (' + item.volumeInfo.authors[0] +')'
             suggestion.appendChild(optionNode)
         })
         
@@ -37,4 +39,4 @@ title.addEventListener('keyup', async (e) => {
 // not all options are displayed
 
 // abandonner la datalist
-// utilisation de div
+// utilisation de divs
