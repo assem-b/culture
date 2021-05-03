@@ -5,3 +5,36 @@ body {
 	margin-top: 0;
     padding: 30px;
 }
+
+.search {
+	max-width: 600px;
+}
+
+.input {
+	padding: 0;
+	border: none;
+	width: 98.4%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left : 9px;
+	border: 1px solid black;
+}
+
+.suggestion {
+	width: 100%;
+	box-shadow: 0 4px 6px rgba(32,33,36,.28);
+	border-radius: 0px 0px 10px 10px;
+}
+
+.suggestion > div {
+	padding: 10px;
+}
+
+.suggestion :last-child {
+	border-radius: 0 0 10px 10px;
+}
+
+.suggestion > div:hover {
+	background-color:#fddf7e;
+	cursor: pointer;
+}

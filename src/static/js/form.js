@@ -1,27 +1,27 @@
 const title = document.querySelector('#title')
-const datalist = document.querySelector('#titles')
+const suggestion = document.querySelector('.suggestion')
 
 
 // affiche les résultats de Google Books Api à mesure que l'utilisateur tape le titre
 title.addEventListener('keyup', async (e) => {
     //supprime les résultats de la recherche précendente
-    while (datalist.firstChild) {
-        datalist.removeChild(datalist.firstChild)
+    while (suggestion.firstChild) {
+        suggestion.removeChild(suggestion.firstChild)
     }
     if (title.value.length > 2) {
-        const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&langRestrict=fr&maxResults=5`
+        const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&langRestrict=fr&maxResults=10`
         const res = await fetch(urlGoogleApi)
             .then(response => response.json())
             .catch((error) => error)
 
-        while (datalist.firstChild) {
-            datalist.removeChild(datalist.firstChild)
+        while (suggestion.firstChild) {
+            suggestion.removeChild(suggestion.firstChild)
         }
 
         res.items.forEach((item) => {        
-            var optionNode = document.createElement('option')
-            optionNode.value = item.volumeInfo.title
-            datalist.appendChild(optionNode)
+            var optionNode = document.createElement('div')
+            optionNode.innerHTML = item.volumeInfo.title 
+            suggestion.appendChild(optionNode)
         })
         
     }
