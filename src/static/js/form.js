@@ -37,3 +37,4 @@ title.addEventListener('keyup', async (e) => {
 // not all options are displayed
 
 // abandonner la datalist
+// utilisation de div
