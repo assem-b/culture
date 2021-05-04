@@ -1,32 +1,84 @@
 const title = document.querySelector('#title')
 const suggestion = document.querySelector('.suggestion')
 
+const removeResults = (divParent) => {
+    while (divParent.firstChild) {
+        divParent.removeChild(divParent.firstChild)
+    }
+}
+
+const divAuthor = (divParent, authors) => {
+    divChild = document.createElement('div')
+    divChild.classList.add('author')
+
+    if (!authors) {
+        divChild.innerHTML += '(auteur introuvable)'
+    } 
+
+    else if (authors.length === 1) {
+        divChild.innerHTML += authors[0]
+    }
+
+    else if (authors.length > 1) {
+        authors.forEach((author) => {
+            if (authors.indexOf(author) !== authors.length - 1) {
+                divChild.innerHTML += author + ' - '
+                return
+            }
+            divChild.innerHTML += author
+        })
+    }
+
+    else {
+        console.log('ERROR')
+    }
+
+    divParent.appendChild(divChild)
+}
+
+const divSubtitle = (divParent, subtitle) => {
+    divChild = document.createElement('div')
+    divChild.classList.add('subtitle')
+
+    if (subtitle) {
+        divChild.innerHTML = subtitle
+    }
+
+    divParent.appendChild(divChild)
+}
+
+
+//Application d'une destructuration
+const createResult = ({title, subtitle, authors}, divParent) => {
+    let divChild = document.createElement('div')
+    divChild.innerHTML = title
+
+    divSubtitle(divChild, subtitle)
+    divAuthor(divChild, authors)
+    
+    divParent.appendChild(divChild)
+}
+
+const displayResults = (items, divParent) => {
+    if (items === undefined) {
+        return console.log('No results')
+    }
+    items.forEach((item) => createResult(item.volumeInfo, divParent))
+}
 
 // affiche les résultats de Google Books Api à mesure que l'utilisateur tape le titre
 title.addEventListener('keyup', async (e) => {
-    //supprime les résultats de la recherche précendente
-    while (suggestion.firstChild) {
-        suggestion.removeChild(suggestion.firstChild)
-    }
+    let response = {}
+    
     if (title.value.length > 2) {
         const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&langRestrict=fr&maxResults=10`
-        const res = await fetch(urlGoogleApi)
+        response = await fetch(urlGoogleApi)
             .then(response => response.json())
             .catch((error) => error)
-
-        while (suggestion.firstChild) {
-            suggestion.removeChild(suggestion.firstChild)
-        }
-
-        console.log(res.items[0])
-
-        res.items.forEach((item) => {        
-            var optionNode = document.createElement('div')
-            optionNode.innerHTML = item.volumeInfo.title + ' (' + item.volumeInfo.authors[0] +')'
-            suggestion.appendChild(optionNode)
-        })
-        
     }
+
+    removeResults(suggestion)
+    displayResults(response.items, suggestion)
 })
 
 // keyup / keypress
@@ -40,3 +92,13 @@ title.addEventListener('keyup', async (e) => {
 
 // abandonner la datalist
 // utilisation de divs
+
+// problème des doublons
+// critère: titre et auteur sont identiques
+// /!\ formatage des informations
+// comment éviter la duplication de removeResult ?
+// la vitesse ne donne pas le temps à la fonction de s'exécuter
+// quand tout est effacé avec ctrl + A et return les résultats ne sont pas effacés
+// function create suggestion
+
+// Formater les résultats
