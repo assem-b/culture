@@ -47,12 +47,20 @@ const divSubtitle = (divParent, subtitle) => {
     divParent.appendChild(divChild)
 }
 
+const divTitle = (divParent, title) => {
+    divChild = document.createElement('div')
+    divChild.classList.add('titre')
+    divChild.innerHTML = title
+
+    divParent.appendChild(divChild)
+}
 
 //Application d'une destructuration
 const createResult = ({title, subtitle, authors}, divParent) => {
     let divChild = document.createElement('div')
-    divChild.innerHTML = title
-
+    divChild.classList.add('livre')
+    
+    divTitle(divChild, title)
     divSubtitle(divChild, subtitle)
     divAuthor(divChild, authors)
     
@@ -67,9 +75,9 @@ const displayResults = (items, divParent) => {
 }
 
 // affiche les résultats de Google Books Api à mesure que l'utilisateur tape le titre
-title.addEventListener('keyup', async (e) => {
+title.addEventListener('input', async (e) => {
     let response = {}
-    
+
     if (title.value.length > 2) {
         const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&langRestrict=fr&maxResults=10`
         response = await fetch(urlGoogleApi)
@@ -98,7 +106,9 @@ title.addEventListener('keyup', async (e) => {
 // /!\ formatage des informations
 // comment éviter la duplication de removeResult ?
 // la vitesse ne donne pas le temps à la fonction de s'exécuter
-// quand tout est effacé avec ctrl + A et return les résultats ne sont pas effacés
 // function create suggestion
-
 // Formater les résultats
+
+// quand tout est effacé avec ctrl + A et return les résultats ne sont pas effacés
+
+// keyup => input pour copier coller
