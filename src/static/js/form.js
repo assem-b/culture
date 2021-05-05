@@ -1,5 +1,6 @@
 const title = document.querySelector('#title')
 const suggestion = document.querySelector('.suggestion')
+const body = document.querySelector('body')
 
 const removeResults = (divParent) => {
     while (divParent.firstChild) {
@@ -82,7 +83,7 @@ title.addEventListener('input', async (e) => {
     let response = {}
     
     if (title.value.length > 2) {
-        const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&langRestrict=fr&maxResults=10`
+        const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&printType=books&langRestrict=fr&maxResults=10`
         response = await fetch(urlGoogleApi)
             .then(response => response.json())
             .catch((error) => error)
@@ -90,6 +91,11 @@ title.addEventListener('input', async (e) => {
 
     removeResults(suggestion)
     displayResults(response.items, suggestion)
+})
+
+body.addEventListener('click', (e) => {
+    console.log('you clicked on body')
+    removeResults(suggestion)
 })
 
 // keyup / keypress
@@ -113,6 +119,8 @@ title.addEventListener('input', async (e) => {
 // Formater les résultats
 
 // quand tout est effacé avec ctrl + A et return les résultats ne sont pas effacés
-// => problème de lenteur
+// => problème de lenteur || Problème réglé
 
 // keyup => input pour copier coller
+
+//Améliorer la recherche => pas la priorité
