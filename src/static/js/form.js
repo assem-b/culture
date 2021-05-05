@@ -69,7 +69,7 @@ const createResult = ({title, subtitle, authors}, divParent) => {
 
 const displayResults = (items, divParent) => {
     if (items === undefined) {
-        return console.log('No results')
+        return //NE PAS OUBLIER
     }
     items.forEach((item) => createResult(item.volumeInfo, divParent))
 }
@@ -77,7 +77,7 @@ const displayResults = (items, divParent) => {
 // affiche les résultats de Google Books Api à mesure que l'utilisateur tape le titre
 title.addEventListener('input', async (e) => {
     let response = {}
-
+    
     if (title.value.length > 2) {
         const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&langRestrict=fr&maxResults=10`
         response = await fetch(urlGoogleApi)
@@ -86,7 +86,7 @@ title.addEventListener('input', async (e) => {
     }
 
     removeResults(suggestion)
-    displayResults(response.items, suggestion)
+    if (title.value.length > 2) displayResults(response.items, suggestion)
 })
 
 // keyup / keypress
@@ -110,5 +110,6 @@ title.addEventListener('input', async (e) => {
 // Formater les résultats
 
 // quand tout est effacé avec ctrl + A et return les résultats ne sont pas effacés
+// => problème de lenteur
 
 // keyup => input pour copier coller
