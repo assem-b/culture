@@ -93,10 +93,8 @@ title.addEventListener('input', async (e) => {
     displayResults(response.items, suggestion)
 })
 
-body.addEventListener('click', (e) => {
-    console.log('you clicked on body')
-    removeResults(suggestion)
-})
+//Click sur body enlève les résultats
+body.addEventListener('click', (e) => removeResults(suggestion))
 
 // keyup / keypress
 // async function 
