@@ -68,6 +68,9 @@ const createResult = ({title, subtitle, authors}, divParent) => {
 }
 
 const displayResults = (items, divParent) => {
+    if (title.value.length < 3) {
+        return
+    }
     if (items === undefined) {
         return //NE PAS OUBLIER
     }
@@ -86,7 +89,7 @@ title.addEventListener('input', async (e) => {
     }
 
     removeResults(suggestion)
-    if (title.value.length > 2) displayResults(response.items, suggestion)
+    displayResults(response.items, suggestion)
 })
 
 // keyup / keypress
