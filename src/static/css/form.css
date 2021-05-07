@@ -1,24 +1,18 @@
-body {
-    font-family: 'Roboto Condensed', sans-serif;
-	max-width: 800px;
-	margin: auto;
-	margin-top: 0;
-    padding: 30px;
+.title {
+	margin: 0;
+	padding: 7px;
+	padding-left: 0;
+	margin-bottom: 7px;
 }
-
 .search {
 	max-width: 600px;
 }
 
 .input {
-	padding: 0;
+	box-sizing: border-box;
+	padding: 10px;
 	border: none;
-	width: 98.4%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left : 9px;
-	border:#dfe1e5 1px solid;
-	border-radius: 15px;
+	width: 100%;
 }
 
 .input:focus {
@@ -26,6 +20,8 @@ body {
 }
 
 .suggestion {
+	color: black;
+	background-color: white;
 	width: 100%;
 	box-shadow: 0 4px 6px rgba(32,33,36,.28);
 	border-radius: 0px 0px 10px 10px;
@@ -46,4 +42,31 @@ body {
 
 .author {
 	color: darkslategray;
+}
+
+.billet {
+	display: flex;
+	margin-top: 20px;
+	align-items: top;
+}
+
+.billet .img {
+	flex-grow: 1;
+	height: 250px;
+	border-radius: 10px;
+}
+
+.billet .comment {
+	flex-grow: 2;
+	border-radius: 15px;
+	color: white;
+}
+
+.billet p {
+	line-height: 1.5;
+	padding-left: 5px;
+}
+
+p {
+	margin-top: 0;
 }

@@ -1,0 +1,56 @@
+body {
+	color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+	background-color: #001935;
+	max-width: 1200px;
+	margin: auto;
+	margin-top: 0;
+    padding: 30px;
+	padding-top: 10px;
+    
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+}
+
+.navbar {
+    flex-grow: 1;
+}
+
+.content {
+    flex-grow: 2;
+    max-width: 600px;
+}
+
+.complement {
+    flex-grow: 1;
+}
+
+.brand {
+    margin: 0;
+    padding: 7px;
+    padding-left: 0;
+    float: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    border: 2px white solid;
+    background-color: #001935;
+    padding: 7px;
+    margin-left: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: white;
+    color: #001935;
+    cursor: pointer;
+}

@@ -5,17 +5,31 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<title>Social Culture</title>
 </head>
 <body>
+	<div class="layout">
+		<div class="navbar">
+			<nav>
+				<h3 class="brand">Bibliothèque sociale</h3>
+			</nav>
+		</div>
 
-<h1>Form for fetching Google Books API</h1>
 
-    
-{{> (whichPartial) }}
-	
+		<div class="content">
+			{{> (whichPartial) }}
+		</div>
 
-
-
+		<div class="complement">
+			    <div class="buttons">
+					<button class="button">Se connecter</button>
+	    			<button class="button">S'inscrire</button>
+				</div>
+		</div>
+	</div>
 </body>
+
+<script src="js/form.js"></script>
+
 </html>

@@ -1,6 +1,8 @@
 const title = document.querySelector('#title')
 const suggestion = document.querySelector('.suggestion')
 const body = document.querySelector('body')
+const html = document.querySelector('html')
+
 
 const removeResults = (divParent) => {
     while (divParent.firstChild) {
@@ -66,6 +68,12 @@ const createResult = ({title, subtitle, authors}, divParent) => {
     divAuthor(divChild, authors)
     
     divParent.appendChild(divChild)
+    divChild.addEventListener('click', (e) => {
+        let title = document.querySelector('#title')
+        title.value = divChild.childNodes[0].innerHTML
+        removeResults(suggestion)
+    })
+
 }
 
 const displayResults = (items, divParent) => {
@@ -78,10 +86,9 @@ const displayResults = (items, divParent) => {
     items.forEach((item) => createResult(item.volumeInfo, divParent))
 }
 
-// affiche les résultats de Google Books Api à mesure que l'utilisateur tape le titre
-title.addEventListener('input', async (e) => {
+const fetchApi = async () => {
     let response = {}
-    
+
     if (title.value.length > 2) {
         const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&printType=books&langRestrict=fr&maxResults=10`
         response = await fetch(urlGoogleApi)
@@ -91,10 +98,16 @@ title.addEventListener('input', async (e) => {
 
     removeResults(suggestion)
     displayResults(response.items, suggestion)
-})
+}
+
+// affiche les résultats de Google Books Api à mesure que l'utilisateur tape le titre
+title.addEventListener('input', async (e) => fetchApi())
+
+title.addEventListener('click', async (e) => fetchApi())
 
 //Click sur body enlève les résultats
-body.addEventListener('click', (e) => removeResults(suggestion))
+html.addEventListener('click', (e) => removeResults(suggestion))
+
 
 // keyup / keypress
 // async function 
