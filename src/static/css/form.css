@@ -8,6 +8,11 @@
 	max-width: 600px;
 }
 
+.wrapper-input {
+	border: 5px solid #98DDCA;
+	border-radius: 10px;
+}
+
 .input {
 	box-sizing: border-box;
 	padding: 10px;
@@ -46,27 +51,43 @@
 
 .billet {
 	display: flex;
+	flex-direction: column;
 	margin-top: 20px;
-	align-items: top;
-}
-
-.billet .img {
-	flex-grow: 1;
-	height: 250px;
-	border-radius: 10px;
-}
-
-.billet .comment {
-	flex-grow: 2;
+	background-color: #E1E5EA;
 	border-radius: 15px;
-	color: white;
+}
+
+.billet .bookTitle {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 7px;
+}
+
+.bookTitle p {
+	color: black;
+
+}
+
+#art1 {
+	background-color: #98DDCA;
+}
+
+#art2 {
+	background-color: #d3ddae;
+}
+
+.billet h3 {
+	display: inline-block;
+	margin: 0;
+	
 }
 
 .billet p {
 	line-height: 1.5;
-	padding-left: 5px;
+	text-align: justify;
+	margin: 0;
 }
 
-p {
-	margin-top: 0;
+.billet .text p {
+	padding: 20px;
 }
