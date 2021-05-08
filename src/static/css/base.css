@@ -14,6 +14,7 @@ body {
 }
 
 .navbar {
+    max-width: 300px;
     flex-grow: 1;
 }
 
@@ -23,6 +24,7 @@ body {
 }
 
 .complement {
+    max-width: 300px;
     flex-grow: 1;
 }
 

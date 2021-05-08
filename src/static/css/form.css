@@ -57,15 +57,17 @@
 	border-radius: 15px;
 }
 
-.billet .bookTitle {
+.billet .encart {
 	border-top-left-radius: 7px;
 	border-top-right-radius: 7px;
 	padding: 7px;
+	background-color: #98DDCA;
 }
+
+
 
 .bookTitle p {
 	color: black;
-
 }
 
 #art1 {
@@ -77,9 +79,11 @@
 }
 
 .billet h3 {
-	display: inline-block;
 	margin: 0;
-	
+}
+
+.billet h4 {
+	margin: 0;
 }
 
 .billet p {
@@ -99,9 +103,7 @@
 	border-bottom-right-radius: 5px;
 }
 
-.billet .author {
-	font-weight: bold;
-}
+
 
 .billet .profile {
 	background-color: #98DDCA;
@@ -113,4 +115,5 @@
 
 .billet .profile p {
 	text-align: right;
+	padding: 2px;
 }
