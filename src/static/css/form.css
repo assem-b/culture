@@ -53,13 +53,13 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 20px;
-	background-color: #E1E5EA;
+	border: 2px solid #98DDCA;
 	border-radius: 15px;
 }
 
 .billet .bookTitle {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
 	padding: 7px;
 }
 
@@ -90,4 +90,27 @@
 
 .billet .text p {
 	padding: 20px;
+}
+
+.billet .text .profile {
+	background-color: #98DDCA;
+	display: inline-block;
+	padding: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.billet .author {
+	font-weight: bold;
+}
+
+.billet .profile {
+	background-color: #98DDCA;
+	padding: 5px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	text-align: right;
+}
+
+.billet .profile p {
+	text-align: right;
 }
