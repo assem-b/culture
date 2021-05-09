@@ -1,0 +1,8 @@
+.navOption {
+    display: flex;
+    flex-direction: column;
+}
+
+.navOption .option h3 {
+    margin-bottom: 5px;
+}
