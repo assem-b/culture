@@ -3,12 +3,16 @@
     flex-direction: row;
     align-items: stretch;
     border-radius: 15px;
-    border: 7px solid #FB3640;
+    border: 7px solid #51c4d3;
 }
 
+
+
 .livre-couverture img {
-    height: 200px;
-    border-radius: 5px;
+    position: absolute;
+    height: 185px;
+    border-radius: 7px;
+
 }
 
 .livre-presentation h3 {
@@ -16,13 +20,43 @@
 }
 
 .livre-presentation h4 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.livre-presentation .author {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.livre-presentation h4 {
+    margin-top: 10px;
+}
+
+.livre-presentation .date {
     margin-top: 10px;
 }
 
 .livre-info {
     padding-left: 10px;
+    margin-left: 120px;
     width: 100%;
 }
+
+.livre-info h3 {
+    margin-top: 10px;
+}
+
+.category {
+    font-weight: bold;
+    color: white;
+    padding: 7px;
+    border-top-left-radius: 5px;
+    background-color: #51c4d3;
+    margin-bottom: 0px;
+    float: right;
+}
+
 
 .contributions {
     display: flex;
@@ -47,14 +81,4 @@
     text-align: justify;
     font-size: 16px;
     margin-top: 0;
-}
-
-.category {
-    font-weight: bold;
-    color: white;
-    padding: 7px;
-    border-top-left-radius: 5px;
-    background-color: #fb3640;
-    margin-bottom: 0px;
-    float: right;
 }
