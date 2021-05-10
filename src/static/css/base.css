@@ -14,7 +14,7 @@ body {
 }
 
 .navbar {
-    max-width: 300px;
+    max-width: 200px;
     flex-grow: 1;
 }
 

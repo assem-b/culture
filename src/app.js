@@ -17,5 +17,8 @@ app.get('', (req, res) => {
     res.render('base', { whichPartial: () => 'form' })
 })
 
+app.get('/livre', (req, res) => {
+    res.render('base', { whichPartial: () => 'livre' })
+})
 
 app.listen(port, () => console.log(`Server is up on ${port}`))

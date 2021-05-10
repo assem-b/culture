@@ -94,6 +94,7 @@ const fetchApi = async () => {
         response = await fetch(urlGoogleApi)
             .then(response => response.json())
             .catch((error) => error)
+        console.log(response)
     }
 
     removeResults(suggestion)
