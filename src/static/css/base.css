@@ -18,13 +18,12 @@ body {
     border-top-left-radius: 10px;
     background-color: #e84545;
     font-weight: bold;
-    padding: 5px;
+    padding: 25px;
 }
 
 .warning p {
     width: 400px;
     line-height: 1.5;
-    padding-left: 5px;
 }
 
 .warning a {
@@ -34,11 +33,15 @@ body {
 .layout {
     display: flex;
     width: 100%;
+    position: relative;
 }
 
 .navbar {
+    align-self: flex-start;
     max-width: 200px;
     flex-grow: 1;
+    position: sticky;
+    top: 0;
 }
 
 .content {
