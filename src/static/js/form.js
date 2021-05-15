@@ -3,7 +3,6 @@ const suggestion = document.querySelector('.suggestion')
 const body = document.querySelector('body')
 const html = document.querySelector('html')
 
-
 const removeResults = (divParent) => {
     while (divParent.firstChild) {
         divParent.removeChild(divParent.firstChild)
