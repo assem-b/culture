@@ -1,4 +1,5 @@
 body {
+    background-color: #DAE0E6;
     font-family: 'Roboto Condensed', sans-serif;
 	max-width: 1100px;
 	margin: auto;
@@ -12,7 +13,7 @@ a {
 }
 
 .warning {
-    display: none;
+    display: absolute;
     color: white;
     position: fixed;
     bottom: 0;
@@ -38,7 +39,9 @@ a {
 .layout {
     display: flex;
     width: 100%;
-    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 
