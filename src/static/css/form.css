@@ -1,3 +1,7 @@
+form {
+	position: relative;
+}
+
 .title {
 	margin: 0;
 	padding: 7px;
@@ -11,7 +15,7 @@
 .wrapper-input {
 	border: 5px solid #98DDCA;
 	border-radius: 10px;
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 }
 
 .input {
@@ -29,8 +33,11 @@
 	color: black;
 	background-color: white;
 	width: 100%;
+	margin-top: -10px;
 	box-shadow: 0 4px 6px rgba(32,33,36,.28);
 	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	z-index: 1;
 }
 
 .suggestion > div {
@@ -46,21 +53,32 @@
 	cursor: pointer;
 }
 
-.subject {
+.subnav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.subject button {
+.subject {
+	width: 20%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.subnav .subject .subject-question {
+	color: darkslategrey;
+}
+
+.subnav button {
 	background-color: white;
 	padding: 5px;
 	border: 1px solid #e84545;
 	font-weight: bold;
 	color: #e84545;
+	border-radius: 5px;
 }
 
-.subject button:hover {
+.subnav button:hover {
 	background-color: #e84545;
 	color: white;
 	cursor: pointer;
@@ -69,10 +87,15 @@
 .question-encart {
 	position: relative;
 	display: flex;
-	padding: 7px;
+
+}
+
+hr {
+	margin-top: 20px;
 	margin-bottom: 20px;
-	border: 1px solid #dfe1e5;
-	border-radius: 5px;
+	border: 0;
+    height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(81, 196, 211, 0.75), rgba(0, 0, 0, 0));
 }
 
 .question-content {
@@ -87,8 +110,12 @@
 	align-items: flex-end;
 }
 
-.question-author a {
+.question-author .vote {
 	margin-left: auto;
+}
+
+.question-author .vote :hover {
+	cursor: pointer;
 }
 
 .question-author img {
@@ -109,7 +136,6 @@
 
 
 .question-encart > img {
-	height: 120px;
 	width: 79px;
 }
 

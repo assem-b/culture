@@ -89,7 +89,7 @@ const fetchApi = async () => {
     let response = {}
 
     if (title.value.length > 2) {
-        const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&printType=books&langRestrict=fr&maxResults=10`
+        const urlGoogleApi = `https://www.googleapis.com/books/v1/volumes?q=${title.value}&printType=books&langRestrict=fr&maxResults=5`
         response = await fetch(urlGoogleApi)
             .then(response => response.json())
             .catch((error) => error)
